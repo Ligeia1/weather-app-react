@@ -1,10 +1,12 @@
+import React from "react";
+import Weather from "./Weather.js";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <div className="container">
-        <button className="btn btn-primary">click</button>
+        <Weather />
       </div>
       <footer>
         This project was coded by Olga Mang and is open-sourced on{" "}
