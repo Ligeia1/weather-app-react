@@ -1,0 +1,12 @@
+.Weather ul {
+  text-transform: capitalize;
+  list-style: none;
+}
+
+.Weather {
+  color: blue;
+}
+
+.Weather .cityInfo {
+  text-align: center;
+}
