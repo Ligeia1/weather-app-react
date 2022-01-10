@@ -1,15 +1,21 @@
 import React, { useState } from "react";
-import Weather from "./Weather";
 import axios from "axios";
+import WeatherDisplay from "./WeatherDisplay";
+import "./WeatherSearch.css";
 
 export default function WeatherSearch(props) {
-  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [ready, setReady] = useState(false);
+  const [weatherData, setWeatherData] = useState({});
+  const [city, setCity] = useState(props.defaultCity);
 
-  function handleResponse(response) {
+  function showWeather(response) {
     console.log(response.data);
+    setReady(true);
     setWeatherData({
-      ready: true,
-      temperature: response.data.main.temp,
+      temperature: Math.round(response.data.main.temp),
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed * 3.6,
+      city: response.data.name,
     });
   }
 
@@ -18,17 +24,29 @@ export default function WeatherSearch(props) {
     search();
   }
 
-  function search() {
-    return <p>hello</p>;
+  function handleCityChange(event) {
+    setCity(event.target.value);
   }
-  if (weatherData.ready) {
+
+  function search() {
+    const apiKey = "8c48afa47a9a9c24f3500c7039d50aaa";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  if (ready) {
     return (
-      <div className="WeatherSearch">
+      <div className="WeatherSearch container">
         <div className="row">
           <div className="col-4"></div>
           <div className="col-6">
             <form onSubmit={handleSubmit}>
-              <input type="search" placeholder="Please enter a city"></input>
+              <input
+                type="search"
+                placeholder="Please enter a city"
+                autoFocus="on"
+                onChange={handleCityChange}
+              ></input>
             </form>
           </div>
           <div className="col-2">
@@ -45,10 +63,7 @@ export default function WeatherSearch(props) {
       </div>
     );
   } else {
-    const apiKey = "8c48afa47a9a9c24f3500c7039d50aaa";
-    let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Hannover&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(handleResponse);
-    return "loading...";
+    search();
+    return "Loading...";
   }
 }
