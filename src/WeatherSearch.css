@@ -1,4 +1,17 @@
 .WeatherSearch {
-  border: 5px solid rgb(44, 43, 43);
-  background-color: brown;
+  border: 1px solid rgb(209, 206, 206);
+  background: radial-gradient(
+    592px at 48.2% 50%,
+    rgba(255, 255, 249, 0.6) 0%,
+    rgb(160, 199, 254) 74.6%
+  );
+  border-radius: 6px;
+}
+
+.WeatherSearch .btn {
+  background-color: rgb(70, 70, 240);
+}
+
+.WeatherSearch .form-control {
+  border-color: rgba(70, 70, 240, 0.6);
 }

@@ -26,17 +26,23 @@ export default function WeatherSearch(props) {
     return (
       <div className="WeatherSearch container">
         <form>
-          <input
-            type="search"
-            placeholder="Please enter a city"
-            autoFocus="on"
-            className="form-control input-border-width-sm"
-          ></input>
-          <input
-            className="btn btn-primary"
-            type="submit"
-            value="Search"
-          ></input>
+          <div className="row m-4">
+            <div className="col">
+              <input
+                type="search"
+                placeholder="Please enter a city"
+                autoFocus="on"
+                className="form-control"
+              ></input>
+            </div>
+            <div className="col">
+              <input
+                className="btn btn-primary"
+                type="submit"
+                value="Search"
+              ></input>
+            </div>
+          </div>
         </form>
         <WeatherDisplay info={weatherData} />
       </div>
