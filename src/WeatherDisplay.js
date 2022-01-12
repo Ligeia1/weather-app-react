@@ -1,5 +1,5 @@
 import React from "react";
-import WeatherSearch from "./WeatherSearch";
+import FormattedDate from "./FormattedDate";
 import "./WeatherDisplay.css";
 
 export default function WeatherDisplay(props) {
@@ -8,20 +8,24 @@ export default function WeatherDisplay(props) {
       <div className="row">
         <div className="col">
           <ul className="cityInfo">
-            <h1>Hannover</h1>
-            <li>Friday, December 17</li>
+            <h1>{props.info.city}</h1>
+            <FormattedDate date={props.info.date} />
             <li>light intensity drizzle</li>
           </ul>
         </div>
       </div>
       <div className="row">
         <div className="col">
-          <img src="http://openweathermap.org/img/wn/09d@2x.png" /> 3°C
+          <img
+            src="http://openweathermap.org/img/wn/09d@2x.png"
+            alt={props.info.description}
+          />{" "}
+          {props.info.temperature}°C
         </div>
         <div className="col">
           <ul>
-            <li>wind: 2 km/h</li>
-            <li>humidity: %</li>
+            <li>wind: {props.info.wind} km/h</li>
+            <li>humidity: {props.info.humidity}%</li>
           </ul>
         </div>
       </div>
