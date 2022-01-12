@@ -31,7 +31,7 @@ export default function WeatherSearch(props) {
             type="search"
             placeholder="Please enter a city"
             autoFocus="on"
-            className="form-control"
+            className="form-control input-border-width-sm"
           ></input>
           <input
             className="btn btn-primary"

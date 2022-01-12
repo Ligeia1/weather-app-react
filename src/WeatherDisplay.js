@@ -20,7 +20,6 @@ export default function WeatherDisplay(props) {
         </div>
         <div className="col">
           <ul>
-            <li>max/min: 8°C | 6 °C </li>
             <li>wind: 2 km/h</li>
             <li>humidity: %</li>
           </ul>
