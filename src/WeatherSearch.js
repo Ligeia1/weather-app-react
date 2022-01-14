@@ -21,10 +21,25 @@ export default function WeatherSearch(props) {
     });
   }
 
+  function search() {
+    const apiKey = "8c48afa47a9a9c24f3500c7039d50aaa";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityUpdate(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="WeatherSearch container">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row m-4">
             <div className="col">
               <input
@@ -32,6 +47,7 @@ export default function WeatherSearch(props) {
                 placeholder="Please enter a city"
                 autoFocus="on"
                 className="form-control"
+                onChange={handleCityUpdate}
               ></input>
             </div>
             <div className="col">
@@ -47,10 +63,6 @@ export default function WeatherSearch(props) {
       </div>
     );
   } else {
-    const apiKey = "8c48afa47a9a9c24f3500c7039d50aaa";
-    let city = "Hannover";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
     return "Loading...";
   }
 }
