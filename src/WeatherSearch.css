@@ -12,6 +12,12 @@
   background-color: rgb(70, 70, 240);
 }
 
+.WeatherSearch .btn:hover {
+  background-color: #f6f9fa;
+  color: rgb(70, 70, 240);
+  border-color: rgb(70, 70, 240);
+}
+
 .WeatherSearch .form-control {
   border-color: rgba(70, 70, 240, 0.6);
 }

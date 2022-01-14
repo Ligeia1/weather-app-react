@@ -10,7 +10,7 @@ export default function WeatherDisplay(props) {
           <ul className="cityInfo">
             <h1>{props.info.city}</h1>
             <FormattedDate date={props.info.date} />
-            <li>light intensity drizzle</li>
+            <li className="text-capitalize">{props.info.description}</li>
           </ul>
         </div>
       </div>
