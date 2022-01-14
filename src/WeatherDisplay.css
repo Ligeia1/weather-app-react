@@ -1,11 +1,26 @@
-.WeatherDisplay ul {
-  list-style: none;
-}
-
 .WeatherDisplay {
   color: rgb(70, 70, 240);
 }
 
+.WeatherDisplay ul {
+  list-style: none;
+}
+
+.WeatherDisplay h1 {
+  font-size: 40px;
+}
+
 .WeatherDisplay .cityInfo {
   text-align: center;
+}
+
+.WeatherDisplay .temperature {
+  font-size: 35px;
+}
+
+.WeatherDisplay .units {
+  font-size: 15px;
+  position: relative;
+  top: -14px;
+  margin-left: -10px;
 }
