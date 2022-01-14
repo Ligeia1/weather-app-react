@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import Temperature from "./Temperature";
 import "./WeatherDisplay.css";
 
 export default function WeatherDisplay(props) {
@@ -22,10 +23,7 @@ export default function WeatherDisplay(props) {
               alt={props.info.description}
               className="float-left"
             />{" "}
-            <span className="temperature">
-              {" "}
-              {props.info.temperature} <span className="units">°C</span>{" "}
-            </span>
+            <Temperature celsius={props.info.temperature} />
           </div>
         </div>
         <div className="col">

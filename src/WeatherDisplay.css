@@ -13,14 +13,3 @@
 .WeatherDisplay .cityInfo {
   text-align: center;
 }
-
-.WeatherDisplay .temperature {
-  font-size: 35px;
-}
-
-.WeatherDisplay .units {
-  font-size: 15px;
-  position: relative;
-  top: -14px;
-  margin-left: -10px;
-}
