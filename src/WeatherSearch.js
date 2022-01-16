@@ -19,6 +19,7 @@ export default function WeatherSearch(props) {
       description: response.data.weather[0].description,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
     });
   }
 
@@ -62,7 +63,7 @@ export default function WeatherSearch(props) {
         </form>
         <WeatherDisplay info={weatherData} />
         <hr />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
         <WeatherForecast />
       </div>
     );
