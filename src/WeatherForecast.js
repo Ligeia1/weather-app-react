@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 import "./WeatherForecast.css";
 import axios from "axios";
+import WeatherForecastDay from "./WeatherForecastDay";
 
 export default function WeatherForecast(props) {
+  let [loaded, setLoaded] = useState(false);
+  let [forecastData, setForecastData] = useState(null);
   function handleResponse(response) {
     console.log(response.data);
+  }
+
+  function handleResponse(response) {
+    console.log(response.data);
+    setLoaded(true);
+    setForecastData(response.data.daily);
   }
 
   function getForecast() {
@@ -15,19 +24,28 @@ export default function WeatherForecast(props) {
 
     axios.get(apiUrl).then(handleResponse);
   }
-
-  return (
-    <div className="WeatherForecast">
-      <div className="container">
-        <div className="text-center d-flex justify-content-evenly">
-          <span className="forecast-day">Mon</span>
-          <span className="weather-icon">icon</span>
-          <span>
-            <span className="tempMax">max </span>|
-            <span className="tempMin"> min </span>
-          </span>
+  if (loaded) {
+    return (
+      <div className="WeatherForecast">
+        <div className="container">
+          <div>
+            {forecastData.map(function (dailyForecast, index) {
+              if (index < 5) {
+                return (
+                  <div key={index}>
+                    <WeatherForecastDay data={dailyForecast} />
+                  </div>
+                );
+              } else {
+                return null;
+              }
+            })}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    getForecast();
+    return "loading";
+  }
 }
