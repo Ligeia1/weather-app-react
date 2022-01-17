@@ -64,7 +64,6 @@ export default function WeatherSearch(props) {
         <WeatherDisplay info={weatherData} />
         <hr />
         <WeatherForecast coordinates={weatherData.coordinates} />
-        <WeatherForecast />
       </div>
     );
   } else {

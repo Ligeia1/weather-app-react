@@ -6,12 +6,9 @@ import WeatherForecastDay from "./WeatherForecastDay";
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
   let [forecastData, setForecastData] = useState(null);
-  function handleResponse(response) {
-    console.log(response.data);
-  }
 
   function handleResponse(response) {
-    console.log(response.data);
+    console.log(response.data.daily);
     setLoaded(true);
     setForecastData(response.data.daily);
   }
@@ -24,6 +21,7 @@ export default function WeatherForecast(props) {
 
     axios.get(apiUrl).then(handleResponse);
   }
+
   if (loaded) {
     return (
       <div className="WeatherForecast">
