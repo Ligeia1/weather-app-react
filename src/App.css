@@ -1,5 +1,6 @@
 body {
   background-color: rgba(158, 186, 243, 0.3);
+  color: rgb(59, 59, 216);
 }
 
 .App {
@@ -10,10 +11,4 @@ body {
 
 footer {
   font-size: 12px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }

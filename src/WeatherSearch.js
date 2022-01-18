@@ -9,12 +9,12 @@ export default function WeatherSearch(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed * 3.6),
       humidity: response.data.main.humidity,
+      feels: Math.round(response.data.main.feels_like),
       city: response.data.name,
       description: response.data.weather[0].description,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
