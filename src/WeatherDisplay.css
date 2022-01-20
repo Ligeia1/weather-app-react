@@ -13,3 +13,19 @@
 .WeatherDisplay .cityInfo {
   text-align: center;
 }
+
+@media (max-width: 600px) {
+  .WeatherDisplay img {
+    width: 80px;
+  }
+
+  .WeatherDisplay .weather-info {
+    font-weight: 700;
+  }
+
+  .WeatherDisplay .weather-information {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+}

@@ -4,3 +4,10 @@
   margin: 15px;
   border-radius: 6px;
 }
+
+@media (max-width: 500px) {
+  .WeatherForecastDay {
+    padding: 5px;
+    margin: 10px;
+  }
+}

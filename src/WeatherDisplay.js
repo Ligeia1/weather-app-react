@@ -15,8 +15,8 @@ export default function WeatherDisplay(props) {
           </ul>
         </div>
       </div>
-      <div className="row">
-        <div className="col-7">
+      <div className="row weather-information">
+        <div className="col-sm-7">
           <div className="clearfix">
             <img
               src={props.info.icon}
@@ -27,11 +27,19 @@ export default function WeatherDisplay(props) {
             <Temperature celsius={props.info.temperature} />
           </div>
         </div>
-        <div className="col-5">
+        <div className="col-sm-5">
           <ul className="mt-3">
-            <li>wind: {props.info.wind} km/h</li>
-            <li>humidity: {props.info.humidity}%</li>
-            <li>feels like: {props.info.feels}°C</li>
+            <li>
+              <span className="weather-info">wind:</span> {props.info.wind} km/h
+            </li>
+            <li>
+              <span className="weather-info">humidity:</span>{" "}
+              {props.info.humidity}%
+            </li>
+            <li>
+              <span className="weather-info">feels like:</span>{" "}
+              {props.info.feels}°C
+            </li>
           </ul>
         </div>
       </div>

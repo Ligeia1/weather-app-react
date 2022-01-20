@@ -78,7 +78,7 @@ export default function WeatherSearch(props) {
                 <input
                   className="btn btn-primary shadow-sm position-button"
                   type="submit"
-                  value="My Position📍"
+                  value="My Position"
                   onClick={getPosition}
                 ></input>
               </div>
