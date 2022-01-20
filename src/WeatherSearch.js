@@ -54,35 +54,37 @@ export default function WeatherSearch(props) {
 
   if (weatherData.ready) {
     return (
-      <div className="WeatherSearch container">
-        <form onSubmit={handleSubmit}>
-          <div className="row m-4">
-            <div className="col-6">
-              <input
-                type="search"
-                placeholder="Please enter a city"
-                autoFocus="on"
-                className="form-control"
-                onChange={handleCityUpdate}
-              ></input>
+      <div className="WeatherSearch">
+        <div className="container d-flex">
+          <form onSubmit={handleSubmit}>
+            <div className="row mt-4 mb-3">
+              <div className="col-6">
+                <input
+                  type="search"
+                  placeholder="Please enter a city"
+                  autoFocus="on"
+                  className="form-control searchbar shadow-sm"
+                  onChange={handleCityUpdate}
+                ></input>
+              </div>
+              <div className="col-6">
+                <input
+                  className="btn btn-primary shadow-sm"
+                  type="submit"
+                  value="Search"
+                ></input>
+              </div>
+              <div className="col">
+                <input
+                  className="btn btn-primary shadow-sm position-button"
+                  type="submit"
+                  value="My Position📍"
+                  onClick={getPosition}
+                ></input>
+              </div>
             </div>
-            <div className="col-3">
-              <input
-                className="btn btn-primary"
-                type="submit"
-                value="Search"
-              ></input>
-            </div>
-            <div className="col-3">
-              <input
-                className="btn btn-primary"
-                type="submit"
-                value="My Position📍"
-                onClick={getPosition}
-              ></input>
-            </div>
-          </div>
-        </form>
+          </form>
+        </div>
         <WeatherDisplay info={weatherData} />
         <hr />
         <WeatherForecast coordinates={weatherData.coordinates} />

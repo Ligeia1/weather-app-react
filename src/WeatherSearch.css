@@ -21,3 +21,15 @@
 .WeatherSearch .form-control {
   border-color: rgba(70, 70, 240, 0.6);
 }
+
+@media (max-width: 600px) {
+  .WeatherSearch .form-control {
+    width: 180px;
+  }
+
+  .WeatherSearch .position-button {
+    margin-top: 4px;
+    display: flex;
+    justify-content: end;
+  }
+}
