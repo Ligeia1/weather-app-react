@@ -18,7 +18,7 @@ export default function WeatherSearch(props) {
       feels: Math.round(response.data.main.feels_like),
       city: response.data.name,
       description: response.data.weather[0].description,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
       coordinates: response.data.coord,
     });
@@ -58,7 +58,7 @@ export default function WeatherSearch(props) {
         <div className="container-fluid">
           <form onSubmit={handleSubmit}>
             <div className="row justify-content-md-center mt-4 mb-3">
-              <div className="col-9">
+              <div className="col col-sm-auto">
                 <input
                   type="search"
                   placeholder="Please enter a city"
@@ -67,14 +67,14 @@ export default function WeatherSearch(props) {
                   onChange={handleCityUpdate}
                 ></input>
               </div>
-              <div className="col">
+              <div className="col col-sm-auto">
                 <input
-                  className="btn btn-primary shadow-sm d-flex"
+                  className="btn btn-primary shadow-sm"
                   type="submit"
                   value="Search"
                 ></input>
               </div>
-              <div className="col">
+              <div className="col-sm-auto">
                 <input
                   className="btn btn-primary shadow-sm position-button"
                   type="submit"

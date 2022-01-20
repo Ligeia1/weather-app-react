@@ -22,7 +22,7 @@
   border-color: rgba(70, 70, 240, 0.6);
 }
 
-@media (max-width: 440px) {
+@media (max-width: 560px) {
   .WeatherSearch .position-button {
     margin-top: 4px;
   }

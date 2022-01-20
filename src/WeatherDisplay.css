@@ -14,13 +14,17 @@
   text-align: center;
 }
 
+.WeatherDisplay img {
+  width: 120px;
+}
+
 @media (max-width: 600px) {
   .WeatherDisplay img {
     width: 80px;
   }
 
   .WeatherDisplay .weather-info {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .WeatherDisplay .weather-information {

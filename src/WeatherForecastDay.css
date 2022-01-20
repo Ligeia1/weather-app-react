@@ -5,6 +5,10 @@
   border-radius: 6px;
 }
 
+img {
+  width: 60px;
+}
+
 @media (max-width: 500px) {
   .WeatherForecastDay {
     padding: 5px;
