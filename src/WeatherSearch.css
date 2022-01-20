@@ -23,10 +23,6 @@
 }
 
 @media (max-width: 440px) {
-  .WeatherSearch .form-control {
-    width: 150px;
-  }
-
   .WeatherSearch .position-button {
     margin-top: 4px;
   }

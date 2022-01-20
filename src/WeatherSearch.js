@@ -55,13 +55,13 @@ export default function WeatherSearch(props) {
   if (weatherData.ready) {
     return (
       <div className="WeatherSearch">
-        <div className="container-fluid d-flex align-content-start flex-wrap">
+        <div className="container-fluid">
           <form onSubmit={handleSubmit}>
-            <div className="row mt-4 mb-3">
-              <div className="col">
+            <div className="row justify-content-md-center mt-4 mb-3">
+              <div className="col-9">
                 <input
                   type="search"
-                  placeholder="Enter a city"
+                  placeholder="Please enter a city"
                   autoFocus="on"
                   className="form-control searchbar shadow-sm"
                   onChange={handleCityUpdate}
@@ -69,7 +69,7 @@ export default function WeatherSearch(props) {
               </div>
               <div className="col">
                 <input
-                  className="btn btn-primary shadow-sm"
+                  className="btn btn-primary shadow-sm d-flex"
                   type="submit"
                   value="Search"
                 ></input>
