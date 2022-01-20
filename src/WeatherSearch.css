@@ -22,9 +22,9 @@
   border-color: rgba(70, 70, 240, 0.6);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 440px) {
   .WeatherSearch .form-control {
-    width: 180px;
+    width: 150px;
   }
 
   .WeatherSearch .position-button {
