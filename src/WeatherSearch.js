@@ -61,7 +61,7 @@ export default function WeatherSearch(props) {
               <div className="col col-sm-auto">
                 <input
                   type="search"
-                  placeholder="Please enter a city"
+                  placeholder="Enter a city"
                   autoFocus="on"
                   className="form-control searchbar shadow-sm"
                   onChange={handleCityUpdate}
